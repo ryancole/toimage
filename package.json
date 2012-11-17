@@ -1,0 +1,18 @@
+{
+    "name": "toimage",
+    "version": "0.0.1",
+    "description": "A node.js addon for Oracle's image export library.",
+    "main": "lib/toimage.js",
+    "scripts": {
+        "install": "node-gyp rebuild"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/ryancole/toimage.git"
+    },
+    "keywords": ["oracle", "export", "image"],
+    "author": "Ryan Cole",
+    "license": "BSD",
+    "gypfile": true,
+    "readmeFilename": "readme.md"
+}
