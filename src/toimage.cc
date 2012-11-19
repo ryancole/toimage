@@ -29,10 +29,18 @@ void toimage_convert (uv_work_t* req) {
             
             VTHEXPORT exportHandle;
             
+            SCCERR foo = EXOpenExport(documentHandle, FI_PNG, IOTYPE_UNIXPATH, baton->destination, 0, 0, NULL, 0, &exportHandle);
+            
+            printf("error: %d\n", foo);
+            
             // convert the source document
-            if (EXOpenExport(documentHandle, FI_PNG, IOTYPE_UNIXPATH, baton->destination, 0, 0, NULL, 0, &exportHandle) == SCCERR_OK) {
+            if (foo == SCCERR_OK) {
+                
+                printf("exporting");
                 
                 if (EXRunExport(exportHandle) == SCCERR_OK) {
+                    
+                    printf("woot");
                     
                     baton->success = true;
                     
